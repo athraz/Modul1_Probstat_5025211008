@@ -8,7 +8,7 @@ dgeom(x, prob = p)
 mean(rgeom(n = 10000, prob = p) == x)
 
 # 1d
-hist(rgeom(n = 10000, prob = p), main = "Histogram Distribusi Geometrik")
+hist(rgeom(n = 10000, prob = p), xlab = "x", ylab = "Frekuensi", main = "Histogram Distribusi Geometrik")
 
 # 1e
 rataan = 1 / p
