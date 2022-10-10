@@ -112,5 +112,43 @@ varian
 ## Soal 4
 > Diketahui nilai x = 2 dan v = 10. Tentukan:
 - 4a. Fungsi Probabilitas dari Distribusi Chi-Square.
+
+Karena Persoaalan distribusi Chi-Square, maka dapat menggunakan fungsi `hist()` dengan parameter `x` (jumlah data) dan `v` (derajat bebas).
+```R
+# 4a
+x = 2
+v = 10
+dchisq(x, v)
+```
+
 - 4b. Histogram dari Distribusi Chi-Square dengan 100 data random.
+
+Histogram distribusi poisson dapat dibuat menggunakan fungsi `hist()` dengan parameter 100 angka acak.
+```R
+# 4b
+hist(rchisq(n = 100, v), xlab = "x", ylab = "v", main = "Histogram distribusi Chi Square dengan 100 data random")
+```
 - 4c. Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Chi-Square.
+
+Rataan distribusi Chi-Square sama dengan v (derajat bebas).
+```R
+rataan = v
+rataan
+```
+Vairan merupakan dua kali rataan.
+```R
+varian = 2 * v
+varian
+```
+
+## Soal 5
+> Diketahui bilangan acak (random variable) berdistribusi exponential (λ = 3).
+- 5a. Fungsi Probabilitas dari Distribusi Exponensial 
+- 5b. Histogram dari Distribusi Exponensial untuk 10, 100, 1000 dan 10000 bilangan random
+- 5c. Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Exponensial untuk n = 100 dan λ = 3
+
+## Soal 6
+> Diketahui generate random nilai sebanyak 100 data, mean = 50, sd = 8.
+- 6a. Fungsi Probabilitas dari Distribusi Normal P(X1 ≤ x ≤ X2), hitung Z-Score Nya dan plot data generate randomnya dalam bentuk grafik.
+- 6b. Generate Histogram dari Distribusi Normal dengan breaks 50 dan format penamaan: **NRP_Nama_Probstat_{Nama Kelas}_DNhistogram**
+- 6c. Nilai Varian (σ²) dari hasil generate random nilai Distribusi Normal.
