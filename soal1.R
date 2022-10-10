@@ -23,3 +23,9 @@ data.frame(x = 0:10, prob = dgeom(x = 0:10, prob = p)) %>%
   ) +
   labs(title= "Peluang x = 3 gagal sebelum sukses pertama", 
        x = "Gagal sebelum sukses pertama", y = "Peluang") 
+
+# 1e
+rataan = 1 / p
+rataan 
+varian = (1 - p) / (p * p)
+varian
