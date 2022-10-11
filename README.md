@@ -12,6 +12,7 @@ x = 3
 p = 0.2
 dgeom(x, prob = p)
 ```
+![Screenshot (166)](https://user-images.githubusercontent.com/96050618/195115471-1e498b07-063e-4740-8874-41d635af052b.png)
 
 - 1b. Mean Distribusi Geometrik dengan 10000 data random , prob = 0,20 dimana distribusi geometrik acak tersebut X = 3.
 
@@ -21,6 +22,7 @@ Mean dapat dicari menggunakan fungsi `mean()` yang menghitung rata-rata dengan p
 # 1b
 mean(rgeom(n = 10000, prob = p) == x)
 ```
+![Screenshot (167)](https://user-images.githubusercontent.com/96050618/195115961-375840cc-4aa8-44a2-93ca-8012be7b3f82.png)
 
 - 1c. Bandingkan Hasil poin a dan b , apa kesimpulan yang bisa didapatkan?
 - 1d. Histogram Distribusi Geometrik , Peluang X = 3 gagal Sebelum Sukses Pertama.
@@ -30,7 +32,7 @@ Histogram dibuat dengan menggunakan fungsi hist() dengan parameter berupa angka 
 # 1c
 hist(rgeom(n = 10000, prob = p), xlab = "x", ylab = "Frekuensi", main = "Histogram Distribusi Geometrik")
 ```
-
+![Screenshot (168)](https://user-images.githubusercontent.com/96050618/195115977-84dd01b8-d21a-4518-a902-cb44e33a0533.png)
 - 1e. Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Geometrik.
 
 Rataan diperoleh dari satu dibagi peluang sukses.
@@ -43,6 +45,7 @@ varian diperoleh dari peluang gagal dibagi dengan kuadrat dari peluang sukses.
 varian = (1 - p) / (p * p)
 varian
 ```
+![Screenshot (169)](https://user-images.githubusercontent.com/96050618/195115989-ca175a06-f8fc-4e25-9f2e-9bb2d8808ef4.png)
 
 ## Soal 2
 > Terdapat 20 pasien menderita Covid19 dengan peluang sembuh sebesar 0.2.
@@ -56,6 +59,7 @@ p = 0.2
 x = 4
 dbinom(x, n, prob = p)
 ```
+![Screenshot (170)](https://user-images.githubusercontent.com/96050618/195117237-48d80ee6-9803-4865-b18a-1e316f29dd8f.png)
 
 - 2b. Gambarkan grafik histogram berdasarkan kasus tersebut.
 
@@ -64,6 +68,7 @@ Histogram distribusi binomial dapat dibuat menggunakan fungsi `hist()` dengan pa
 # 2b
 hist(rbinom(x, n, prob = p), xlab =  "x", ylab = "Frekuensi", main = "Histogram Distribusi Binomial")
 ```
+![Screenshot (172)](https://user-images.githubusercontent.com/96050618/195117282-9495f828-4cdd-4013-8611-7625ffa7248a.png)
 
 - 2c. Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Binomial.
 
@@ -77,6 +82,7 @@ Varian diperoleh dari rataan dikali peluang gagal
 varian = n * p * (1 - p)
 varian
 ```
+![Screenshot (171)](https://user-images.githubusercontent.com/96050618/195117258-0cd8098a-765d-4903-adbc-b90f3b8d1238.png)
 
 ## Soal 3
 > Diketahui data dari  sebuah tempat bersalin di rumah sakit tertentu menunjukkan rata-rata historis 4,5 bayi lahir di rumah sakit ini setiap hari.
@@ -89,6 +95,7 @@ lambda = 0.45
 x = 6
 dpois(x, lambda)
 ```
+![Screenshot (173)](https://user-images.githubusercontent.com/96050618/195120009-2b772bb5-8359-4ad1-9ebd-474d2241ab06.png)
 
 - 3b. Simulasikan dan buatlah histogram kelahiran 6 bayi akan lahir di rumah sakit ini  selama setahun (n = 365).
 
@@ -97,6 +104,7 @@ Histogram distribusi poisson dapat dibuat menggunakan fungsi `hist()` dengan par
 # 3b
 hist(rpois(n = 356, lambda), xlab = "x", ylab = "Frekuensi", main = "Histogram binomial Poisson selama setahun (n = 365)")
 ```
+![Screenshot (175)](https://user-images.githubusercontent.com/96050618/195120000-7396d284-0ec7-46d7-a8e5-a2b5f5bf1c74.png)
 
 - 3c. Bandingkan hasil poin a dan b , Apa kesimpulan yang bisa didapatkan
 - 3d. Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Poisson.
@@ -108,6 +116,7 @@ rataan = varian = lambda
 rataan
 varian
 ```
+![Screenshot (174)](https://user-images.githubusercontent.com/96050618/195120014-e8bb9f3d-16f0-4111-b433-a3b2bbb9f8d9.png)
 
 ## Soal 4
 > Diketahui nilai x = 2 dan v = 10. Tentukan:
@@ -120,6 +129,7 @@ x = 2
 v = 10
 dchisq(x, v)
 ```
+![Screenshot (176)](https://user-images.githubusercontent.com/96050618/195120637-835608b0-3092-4004-afeb-770f3a96a521.png)
 
 - 4b. Histogram dari Distribusi Chi-Square dengan 100 data random.
 
@@ -128,6 +138,8 @@ Histogram distribusi poisson dapat dibuat menggunakan fungsi `hist()` dengan par
 # 4b
 hist(rchisq(n = 100, v), xlab = "x", ylab = "v", main = "Histogram distribusi Chi Square dengan 100 data random")
 ```
+![Screenshot (178)](https://user-images.githubusercontent.com/96050618/195120670-82930306-db8b-4fe4-887d-def6bfba9cb5.png)
+
 - 4c. Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Chi-Square.
 
 Rataan distribusi Chi-Square sama dengan v (derajat bebas).
@@ -140,6 +152,7 @@ Vairan merupakan dua kali rataan.
 varian = 2 * v
 varian
 ```
+![Screenshot (177)](https://user-images.githubusercontent.com/96050618/195120662-df592fb0-0c89-4dbd-8668-783ca99373fb.png)
 
 ## Soal 5
 > Diketahui bilangan acak (random variable) berdistribusi exponential (λ = 3).
