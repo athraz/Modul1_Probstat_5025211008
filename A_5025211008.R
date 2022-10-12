@@ -36,7 +36,7 @@ varian
 
 # SOAL 3
 # 3a
-lambda = 0.45
+lambda = 4.5
 x = 6
 dpois(x, lambda)
 
@@ -81,5 +81,30 @@ set.seed(1)
 rataan = mean(rexp(n = 100, rate = lambda))
 rataan
 varian = sd(rexp(n = 100, rate = lambda))
+varian = varian * varian
+varian
+
+
+# SOAL 6
+# 6a
+n = 100
+mean = 50
+sd = 8
+set.seed(1)
+data = rnorm(n, mean, sd)
+data
+
+x1 = floor(mean(data))
+x1
+x2 = ceiling(mean(data))
+x2
+zscore = (data - mean(data)) / sd(data)
+plot(zscore)
+
+# 6b
+hist(data, breaks = 50, main = "5025211008_Muhammad Razan Athallah_Probstat_A_DNhistogram")
+
+#6c
+varian = sd(data)
 varian = varian * varian
 varian
