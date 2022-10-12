@@ -1,0 +1,70 @@
+# SOAL 1
+# 1a
+x = 3
+p = 0.2
+dgeom(x, prob = p)
+
+# 1b
+mean(rgeom(n = 10000, prob = p) == x)
+
+# 1d
+hist(rgeom(n = 10000, prob = p), xlab = "x", ylab = "Frekuensi", main = "Histogram Distribusi Geometrik")
+
+# 1e
+rataan = 1 / p
+rataan 
+varian = (1 - p) / (p * p)
+varian
+
+
+# SOAL 2
+# 2a
+n = 20
+p = 0.2
+x = 4
+dbinom(x, n, prob = p)
+
+# 2b
+hist(rbinom(x, n, prob = p), xlab =  "x", ylab = "Frekuensi", main = "Histogram Distribusi Binomial")
+
+# 2c
+rataan = n * p
+rataan
+varian = n * p * (1 - p)
+varian
+
+
+# SOAL 3
+# 3a
+lambda = 0.45
+x = 6
+dpois(x, lambda)
+
+# 3b
+hist(rpois(n = 356, lambda), xlab = "x", ylab = "Frekuensi", main = "Histogram binomial Poisson selama setahun (n = 365)")
+
+# 3d
+rataan = varian = lambda
+rataan
+varian
+
+
+# SOAL 4
+# 4a
+x = 2
+v = 10
+dchisq(x, v)
+
+# 4b
+hist(rchisq(n = 100, v), xlab = "x", ylab = "v", main = "Histogram distribusi Chi Square dengan 100 data random")
+
+# 4c
+rataan = v
+rataan
+varian = 2 * v
+varian
+
+
+# SOAL 5
+#5a
+lambda = 3
