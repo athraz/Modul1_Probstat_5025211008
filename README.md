@@ -32,7 +32,7 @@ Poin a dan b cenderung selalu mengeluarkan hasil yang berbeda. Poin a mengeluark
 
 Histogram dibuat dengan menggunakan fungsi hist() dengan parameter berupa angka acak.
 ```R
-# 1c
+# 1d
 hist(rgeom(n = 10000, prob = p), xlab = "x", ylab = "Frekuensi", main = "Histogram Distribusi Geometrik")
 ```
 ![Screenshot (181)](https://user-images.githubusercontent.com/96050618/195235859-d14d534e-d368-4c01-bc1d-aa3c352688cf.png)
@@ -86,7 +86,7 @@ Varian diperoleh dari rataan dikali peluang gagal
 varian = n * p * (1 - p)
 varian
 ```
-![Screenshot (185)](https://user-images.githubusercontent.com/96050618/195236083-7c03a9e4-1501-4f9c-b7b0-6c6c68cf40a8.png)
+![Screenshot (192)](https://user-images.githubusercontent.com/96050618/195242122-9f2240cf-2a72-4bde-b4a2-ced2cbf174ef.png)
 
 ## Soal 3
 > Diketahui data dari  sebuah tempat bersalin di rumah sakit tertentu menunjukkan rata-rata historis 4,5 bayi lahir di rumah sakit ini setiap hari.
@@ -99,7 +99,7 @@ lambda = 0.45
 x = 6
 dpois(x, lambda)
 ```
-![Screenshot (186)](https://user-images.githubusercontent.com/96050618/195236225-16cf2f8e-ebe6-4729-8868-7c50e949d897.png)
+![Screenshot (193)](https://user-images.githubusercontent.com/96050618/195242105-6696291c-7ef1-4530-b690-4e536a3c0295.png)
 
 - 3b. Simulasikan dan buatlah histogram kelahiran 6 bayi akan lahir di rumah sakit ini  selama setahun (n = 365).
 
@@ -108,9 +108,11 @@ Histogram distribusi poisson dapat dibuat menggunakan fungsi `hist()` dengan par
 # 3b
 hist(rpois(n = 356, lambda), xlab = "x", ylab = "Frekuensi", main = "Histogram binomial Poisson selama setahun (n = 365)")
 ```
-![Screenshot (187)](https://user-images.githubusercontent.com/96050618/195236231-07e37355-108f-41c1-bc29-a42bed7c840a.png)
+![Screenshot (194)](https://user-images.githubusercontent.com/96050618/195242112-78ef2537-f26a-4e84-a806-e2a331b075a3.png)
 
 - 3c. Bandingkan hasil poin a dan b , Apa kesimpulan yang bisa didapatkan
+
+
 - 3d. Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Poisson.
 
 Rataan dan Varian dari distribusi poisson sama dengan lambda.
@@ -120,7 +122,7 @@ rataan = varian = lambda
 rataan
 varian
 ```
-![Screenshot (188)](https://user-images.githubusercontent.com/96050618/195236246-fd2df518-22cc-49cd-9e70-f6ec4ecdd31f.png)
+![Screenshot (195)](https://user-images.githubusercontent.com/96050618/195242115-d184c734-859e-4fc2-a037-82c2471f6808.png)
 
 ## Soal 4
 > Diketahui nilai x = 2 dan v = 10. Tentukan:
@@ -133,7 +135,7 @@ x = 2
 v = 10
 dchisq(x, v)
 ```
-![Screenshot (189)](https://user-images.githubusercontent.com/96050618/195236934-92c79f70-e181-4737-89d9-0a7aadf50525.png)
+![Screenshot (196)](https://user-images.githubusercontent.com/96050618/195242116-e8441fde-54fc-43b0-bf6b-fa8355e3f738.png)
 
 - 4b. Histogram dari Distribusi Chi-Square dengan 100 data random.
 
@@ -142,7 +144,7 @@ Histogram distribusi poisson dapat dibuat menggunakan fungsi `hist()` dengan par
 # 4b
 hist(rchisq(n = 100, v), xlab = "x", ylab = "v", main = "Histogram distribusi Chi Square dengan 100 data random")
 ```
-![Screenshot (190)](https://user-images.githubusercontent.com/96050618/195236938-932f8059-7243-4dd5-bea8-19ed98ec61e7.png)
+![Screenshot (197)](https://user-images.githubusercontent.com/96050618/195242118-6a654527-fd75-4375-929d-370e2f34c6b0.png)
 
 - 4c. Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Chi-Square.
 
@@ -156,11 +158,21 @@ Vairan merupakan dua kali rataan.
 varian = 2 * v
 varian
 ```
-![Screenshot (191)](https://user-images.githubusercontent.com/96050618/195236943-cb86fdea-9ff1-47b4-bcdc-986f10ded4df.png)
+![Screenshot (198)](https://user-images.githubusercontent.com/96050618/195242121-0522aa09-9dc9-4f10-b24a-60aad20231cd.png)
 
 ## Soal 5
 > Diketahui bilangan acak (random variable) berdistribusi exponential (λ = 3).
 - 5a. Fungsi Probabilitas dari Distribusi Exponensial 
+
+Persoalan memberikan bilangan acak berdistribusi exponential, sehingga bisa digunakan fungsi rexp() dengan parameter banyak observasi dan lambda (rata-rata terjadinya sukses). Supaya mendapat hasil yang tetap untuk setiap percobaan, digunakan fungsi set.seed().
+```R
+# 5a
+lambda = 3
+set.seed(1)
+rexp(1, rate = lambda)
+```
+![Screenshot (199)](https://user-images.githubusercontent.com/96050618/195242991-9d140a59-95e9-4ab5-a218-37dcf8d59a8a.png)
+
 - 5b. Histogram dari Distribusi Exponensial untuk 10, 100, 1000 dan 10000 bilangan random
 - 5c. Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Exponensial untuk n = 100 dan λ = 3
 
