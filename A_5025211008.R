@@ -64,7 +64,22 @@ rataan
 varian = 2 * v
 varian
 
-
 # SOAL 5
-#5a
+# 5a
 lambda = 3
+set.seed(1)
+rexp(1, rate = lambda)
+
+# 5b
+hist(rexp(10, rate = lambda), main = "Histogram Distribusi Eksponensial dengan 10 bilangan acak")
+hist(rexp(100, rate = lambda), main = "Histogram Distribusi Eksponensial dengan 100 bilangan acak")
+hist(rexp(1000, rate = lambda), main = "Histogram Distribusi Eksponensial dengan 1000 bilangan acak")
+hist(rexp(10000, rate = lambda), main = "Histogram Distribusi Eksponensial dengan 10000 bilangan acak")
+
+# 5c
+set.seed(1)
+rataan = mean(rexp(n = 100, rate = lambda))
+rataan
+varian = sd(rexp(n = 100, rate = lambda))
+varian = varian * varian
+varian
