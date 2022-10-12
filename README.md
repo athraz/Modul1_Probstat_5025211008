@@ -1,4 +1,6 @@
 # Modul1_Probstat_5025211008
+Penjelasan Praktikum Modul 1 Probabilitas dan Statistik.  
+Dibuat oleh Muhammad Razan Athallah (5025211008).
 
 ## Soal 1
 > Seorang penyurvei secara acak memilih orang-orang di jalan sampai dia bertemu dengan seseorang yang menghadiri acara vaksinasi sebelumnya. 
@@ -26,7 +28,7 @@ mean(rgeom(n = 10000, prob = p) == x)
 
 - 1c. Bandingkan Hasil poin a dan b , apa kesimpulan yang bisa didapatkan?
 
-Poin a dan b cenderung selalu mengeluarkan hasil yang berbeda. Poin a mengeluarkan hasil distribusi geometrik dengan parameter yang bernilai tetap, didapatkan hasil poin a selalu tetap yaitu `0.1024`. Sedangkan poin b mengeluarkan rata-rata dari dari angka acak peluang kehadiran, didapatkan hasil poin b berubah-ubah seperti `0.1031`, `0.1048`, `0.1047`, dsb.
+Poin a dan b cenderung selalu mengeluarkan hasil yang berbeda. Poin a mengeluarkan hasil distribusi geometrik dengan parameter yang bernilai tetap, didapatkan hasil poin a selalu tetap yaitu `0.1024`. Sedangkan poin b mengeluarkan rata-rata dari dari angka acak peluang kehadiran, didapatkan hasil poin b berubah-ubah seperti `0.1031`, `0.1048`, `0.1047`, dsb. Meskipun begitu, hasil dari poin b tidak terpaut jauh dari hasil poin a.
 
 - 1d. Histogram Distribusi Geometrik , Peluang X = 3 gagal Sebelum Sukses Pertama.
 
@@ -112,6 +114,7 @@ hist(rpois(n = 356, lambda), xlab = "x", ylab = "Frekuensi", main = "Histogram b
 
 - 3c. Bandingkan hasil poin a dan b , Apa kesimpulan yang bisa didapatkan
 
+Poin a mengeluarkan hasil distribusi poisson yang selalu tetap yaitu `0.12812`. Sedangkan poin b mengeluarkan peluang acak dari kelahiran bayi dalam satu tahun, didapatkan hasil poin b berubah-ubah. Meskipun begitu, selisih dari hasil poin a dan b cenderung tidak terlalu jauh. Hal ini disebabkan nilai dari poin a didapat dari range nilai poin b.
 
 - 3d. Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Poisson.
 
@@ -206,5 +209,40 @@ varian
 ## Soal 6
 > Diketahui generate random nilai sebanyak 100 data, mean = 50, sd = 8.
 - 6a. Fungsi Probabilitas dari Distribusi Normal P(X1 ≤ x ≤ X2), hitung Z-Score Nya dan plot data generate randomnya dalam bentuk grafik.
+
+Data acak dari distribusi normal didapatkan dengan menggunakan fungsi `rnorm()` dengan parameter `n` (banyaknya data acak yang diinginkan), `mean` (rata-rata data acak yang diinginkan), dan `sd` (standar deviasi data acak yang diinginkan). Untuk mendapatkan nilai `x1` cukup dengan menggunakan fungsi `floor()` dari rata-rata data acak, begitu juga dengan `x2` cukup dengan menggunakan fungsi `ceiling()`. Z-score didapat dengan rumus data acak dikurangi dengan rata-rata data kemudian dibagi dengan standar deviasi data. Membuat plot dari Z-score dapat dengan menggunakan fungsi `plot()` dengan parameter variabel z-score.
+```R
+# 6a
+n = 100
+mean = 50
+sd = 8
+set.seed(1)
+data = rnorm(n, mean, sd)
+data
+
+x1 = floor(mean(data))
+x1
+x2 = ceiling(mean(data))
+x2
+zscore = (data - mean(data)) / sd(data)
+plot(zscore)
+```
+![Screenshot (205)](https://user-images.githubusercontent.com/96050618/195261695-cba212c0-c45c-4e46-8334-95758d26f16c.png)
+
 - 6b. Generate Histogram dari Distribusi Normal dengan breaks 50 dan format penamaan: **NRP_Nama_Probstat_{Nama Kelas}_DNhistogram**
+
+Histogram dapat dibuat dengan menggunakan fungsi `hist()` dengan parameter data acak, breaks dan format penamaan.
+```R
+# 6b
+hist(data, breaks = 50, main = "5025211008_Muhammad Razan Athallah_Probstat_A_DNhistogram")
+```
+![Screenshot (206)](https://user-images.githubusercontent.com/96050618/195261689-e3d56fe4-2ea7-4176-abaa-68016ed60efc.png)
+
 - 6c. Nilai Varian (σ²) dari hasil generate random nilai Distribusi Normal.
+Varian diperoleh dari kuadrat dari standar deviasi data.
+```R
+varian = sd(data)
+varian = varian * varian
+varian
+```
+![Screenshot (207)](https://user-images.githubusercontent.com/96050618/195261694-c297278a-1d86-4a35-b241-8530eab5a5c4.png)
