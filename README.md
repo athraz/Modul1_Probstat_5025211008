@@ -164,7 +164,7 @@ varian
 > Diketahui bilangan acak (random variable) berdistribusi exponential (λ = 3).
 - 5a. Fungsi Probabilitas dari Distribusi Exponensial 
 
-Persoalan memberikan bilangan acak berdistribusi exponential, sehingga bisa digunakan fungsi rexp() dengan parameter banyak observasi dan lambda (rata-rata terjadinya sukses). Supaya mendapat hasil yang tetap untuk setiap percobaan, digunakan fungsi set.seed().
+Persoalan memberikan bilangan acak berdistribusi exponential, sehingga bisa digunakan fungsi `rexp()` dengan parameter banyak observasi dan lambda (rata-rata terjadinya sukses). Supaya mendapat hasil yang tetap untuk setiap percobaan, digunakan fungsi `set.seed()`.
 ```R
 # 5a
 lambda = 3
@@ -174,7 +174,34 @@ rexp(1, rate = lambda)
 ![Screenshot (199)](https://user-images.githubusercontent.com/96050618/195242991-9d140a59-95e9-4ab5-a218-37dcf8d59a8a.png)
 
 - 5b. Histogram dari Distribusi Exponensial untuk 10, 100, 1000 dan 10000 bilangan random
+
+Histogram dibuat dengan fungsi `hist()` dengan parameter angka acak. Angka acak didapatkan dari fungsi `rexp()` dengan parameter banyak observasi (10, 100, 1000, dan 10000) dan lambda.
+```R
+# 5b
+hist(rexp(10, rate = lambda), main = "Histogram Distribusi Eksponensial dengan 10 bilangan acak")
+hist(rexp(100, rate = lambda), main = "Histogram Distribusi Eksponensial dengan 100 bilangan acak")
+hist(rexp(1000, rate = lambda), main = "Histogram Distribusi Eksponensial dengan 1000 bilangan acak")
+hist(rexp(10000, rate = lambda), main = "Histogram Distribusi Eksponensial dengan 10000 bilangan acak")
+```
+![Screenshot (200)](https://user-images.githubusercontent.com/96050618/195244093-0ed7929b-6708-4028-9efb-ab1b4dda9930.png)
+![Screenshot (201)](https://user-images.githubusercontent.com/96050618/195244085-d2ab24ff-f0b0-4769-bade-209ba5b39515.png)
+![Screenshot (202)](https://user-images.githubusercontent.com/96050618/195244090-df149438-57d6-4f5f-a3ce-f09507094e0c.png)
+![Screenshot (203)](https://user-images.githubusercontent.com/96050618/195244091-e44c0b40-18ab-4b80-ad38-f13563b26655.png)
+
 - 5c. Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Exponensial untuk n = 100 dan λ = 3
+
+Rataan diperoleh menggunakan fungsi `mean()` dengan parameter angka acak. Angka acak didapatkan dari fungsi `rexp()` dengan parameter banyak observasi (100) dan lambda.
+```R
+rataan = mean(rexp(n = 100, rate = lambda))
+rataan
+```
+Varian diperoleh dari hasi kuadrat fungsi `sd()` dengan parameter angka acak. Angka acak didapatkan dari fungsi `rexp()` dengan parameter banyak observasi (100) dan lambda.
+```R
+varian = sd(rexp(n = 100, rate = lambda))
+varian = varian * varian
+varian
+```
+![Screenshot (204)](https://user-images.githubusercontent.com/96050618/195244900-bec91e63-93b8-4e5b-b378-477e7035c62c.png)
 
 ## Soal 6
 > Diketahui generate random nilai sebanyak 100 data, mean = 50, sd = 8.
